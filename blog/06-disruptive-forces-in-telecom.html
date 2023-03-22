@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>06. Disruptive forces in telecom | willsab.com</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+	<header>
+		<nav>
+			<a href="/">Home</a>
+			<a href="/about.html">About</a>
+			<a href="/blog">Blog</a>
+			<a href="/reading-list.html">Reading list</a>
+		</nav>
+	</header>
+
+	<main>
+
+		<h1>06. Disruptive forces in telecom</h1>
+        <p class="date" style="color: #999">Posted 2017-01-03</p>
+
+		<p>Hope y’all had great holidays. I myself have been thoroughly enjoying the warm climes and awesome cuisine of my hometown of New Orleans these last few weeks.</p>
+
+		<p>Lately I’ve spent a lot of time thinking about what’s going on in the telecommunications industry. Much has been written about industry leader moves (e.g., content/distribution consolidation like <a href="http://www.wsj.com/articles/at-t-reaches-deal-to-buy-time-warner-for-more-than-80-billion-1477157084" target="_blank">AT&amp;T buying TWC</a>, vertical consolidation like <a href="http://www.wsj.com/articles/centurylink-to-buy-level-3-communications-for-25-billion-1477911639" target="_blank">CenturyLink buying Level 3</a>, SoftBank investing in anything to <a href="http://www.wsj.com/articles/softbank-investors-cheer-ceos-meeting-with-trump-1481095552" target="_blank">get Sprint ahead</a>). President Elect Trump’s plan for deregulation may <a href="http://www.wsj.com/article/SB11202777042148913632204582485323685659882.html" target="_blank">help intensify these dynamics</a>. And if you’re thinking of 5G, initial roll-out seems pretty distant, with experts estimating it’ll come to fruition <a href="https://www.cnet.com/news/how-5g-will-push-a-supercharged-network-to-your-phone-home-and-car/" target="_blank">sometime between 2020 and 2025</a>. But right now, I’m more interested in disruptive forces that might chip away at <a href="http://www.newyorker.com/tech/elements/the-oligopoly-problem" target="_blank">industry oligopoly</a>.</p>
+
+		<p>Plus I knew it was time to share some thoughts when, in his 2016 review, Fred Wilson noted that continued telco consolidation makes him want to <a href="http://avc.com/2016/12/what-did-and-did-not-happen-in-2016/" target="_blank">invest in communications infrastructure</a>. Agreed.</p>
+
+		<p>Without further ado, here are three trends impacting telco and opening space for disruption.</p>
+
+		<h2>1. Infrastructure disaggregation</h2>
+		<p>For a while, telcos have been lowering operating expenses by choosing to not own (or operate) their entire network. This makes sense as there’s not a lot of margin, in itself, in owning a large network of radio towers across the U.S. In some cases, governments are mandating shared infrastructure, since building costly backbones, connecting a tower network or ISP to “the internet,” means billions in unnecessary spending (e.g., <a href="http://www.cbc.ca/news/business/crtc-says-big-telecoms-must-share-high-speed-networks-with-competitors-1.3163132">Canada sharing mandate</a>, Mexico’s <a href="http://www.americasquarterly.org/content/telecommunications-mexicos-new-reform">shared backbone</a>). There are many ways to share infrastructure, but the most common you’ll see are passive sharing (that is, sharing a tower or a duct) and active sharing (or infrastructure of electronic assets). More regulators and operators have started testing <a href="http://www.forbes.com/sites/roslynlayton/2016/09/08/give-spectrum-sharing-a-chance/#476504b694eb">spectrum sharing</a>. <a href="https://www.itu.int/en/ITU-D/Regional-Presence/ArabStates/Documents/events/2016/CT/Final Documents/Session3/Infrastructure sharing and competition- SSEMBOGA.Final.pdf">This</a> and <a href="http://1e8q3q16vyc81g8l3h3md6q5f5e.wpengine.netdna-cdn.com/wp-content/uploads/2015/03/Expert-Briefing-Jensen-30-March.pdf">this</a> are good primers on the sharing topic.</p>
+		<p>Sharing has lowered costs, but the industry would love to have those expenses even lower. Open-sourcing goes beyond this and opens infrastructure to any operator or developer, essentially making components “off-the-shelf.” The logic is that a large part of infrastructure cost, and deployment difficulty, is due to components being customized by competing vendors like Ericsson and Nokia. Opening designs reduces cost, hastens deployment, and for all but infrastructure vendors, potentially increases sales and traffic.</p>
+
+		<p>Facebook is accelerating a lot of this open-sourcing with its <a href="https://code.facebook.com/posts/973406756030104/adopting-an-open-approach-to-global-networks-with-the-telecom-infra-project/">Telecom Infra Project (TIP)</a> I’ve written about before and its <a href="https://code.facebook.com/posts/1754757044806180/introducing-opencellular-an-open-source-wireless-access-platform">OpenCellular initiative</a>. (Note: TIP and OpenCellular highlight another trend I won’t go deep on here, which is the entry of internet giants into telco. Facebook has TIP and Internet.org; Google has made inroads with Fiber). TIP, for instance, is bringing industry leaders together to open-source the traditional network, to (a) reduce the high cost of infrastructure, (b) “spur innovation” for new components, (c) position Facebook as a leading stakeholder in infrastructure, and (d) give Facebook a cheaper “network in a box” with which to bring online those still unconnected and better support roll-out of new applications like VR. It seems to be going well: TIP have already <a href="http://www.zdnet.com/article/facebook-contributes-telecom-designs-plans-to-telecom-infra-project-adds-partners/">cooked up new component designs</a>, networking platforms, and a wireless architecture; OpenCellular’s Terragraph cell architecture seems to be <a href="https://code.facebook.com/posts/1072680049445290/introducing-facebook-s-new-terrestrial-connectivity-systems-terragraph-and-project-aries/">driving down cost</a> for connecting users in dense urban areas.</p>
+		<p>Alright, lots of technical stuff, but what’s it mean? Well, I think the less operator or vendor control there is over infrastructure, the more need there is for organizing principles around use of platforms and assets. I’m not clear on what that will mean, but a hunch is there needs to be a type of blockchain application tracking usage of shared assets, especially things as ethereal as spectrum or an open-source transponder. Moreover, if more components are open-sourced, it could mean more companies, like <a href="http://forums.juniper.net/t5/Packet-Optical-Technologies/Juniper-and-TIP-Driving-Open-and-Disaggregated-Packet-Optical/ba-p/299293">Juniper</a>, and startups can accelerate the move to software-defined networking (SDN).</p>
+		<p>And finally, I like this quote from a Facebook engineer in <a href="http://www.theregister.co.uk/2016/11/17/facebook_tip_starts_to_hurl_real_rocks_at_mobile_infrastructure_model/">this article</a>: “[OpenCellular] was designed with simplicity in mind, to encourage people to deploy their own cellular networks. … [It] doesn’t require substantial technical expertise.” Startups like Webpass are seizing on this idea, and I doubt they’ll be the last. Exciting stuff.</p>
+
+		<h2>2. A data boom and spectrum crunch</h2>
+		<p>One of the things I find most fascinating about the mobile explosion is that it’s been based on more efficiently using one of our oldest assets: our airwaves. Spectrum was the basis for broadcast television and now our cellphones’ internet access. That said, it’s it could begin to present limits.</p>
+		<p>The issue is we’re eating up more of the available bandwidth with more data-intensive applications like video and music streaming and, soon, self-driving vehicles and VR/AR. For example, some <a href="http://datacenterfrontier.com/virtual-reality-data-center/">experts estimate</a> that a GearVR headset video file is about 20 times the size of today’s full HD videos. On top of that, the rise of IoT promises to bring around <a href="http://spectrum.ieee.org/tech-talk/telecom/internet/popular-internet-of-things-forecast-of-50-billion-devices-by-2020-is-outdated">30 billion devices online by 2020</a>. It all amounts to what many predict to be a “spectrum crunch.”</p>
+		<p>How can we fix this? For starters, I think “spectrum crunch” is a bit of a misnomer. Sure, there’s a physical limit on the data airwaves can transmit, but there’s still available bandwidth. A big issue is regulation; AT&amp;T or Verizon pay lots of money for rights to specific channels in certain markets that other operators can’t use. That’s not ideal. Thankfully, <a href="https://www.nist.gov/programs-projects/spectrum-sharing">more spectrum sharing tech</a> is popping up which, in an ideal world, would allow for more efficient use of existing bands. Moreover, the coming implementation of 5G promises to more efficiently use allocated spectrum bands.</p>
+		<p>Spectrum efficiency aside, there are possible network configurations that don’t clog up airwaves, perhaps by using millimeter wave spectrum (large swaths of which are open for use) or offloading traffic onto under-utilized Wi-Fi networks. Google Fi is premised on offering a seamless LTE/Wi-Fi solution which offloads telco network traffic. (Random note: I’d love to see a mesh network Airbnb of unused Wi-Fi bandwidth.) Startups like <a href="https://www.wired.com/2015/03/perlman/">Webpass</a> (acquired by Google) and <a href="https://techcrunch.com/2016/12/19/starry-internet/">Starry Internet</a> look to disrupt typical ISP solutions by reconfiguring the tower/fiber/router last-mile connection. These approaches come with engineering challenges, but they may hold a critical key to solving this “crunch.”</p>
+
+		<h2>3. Edge/fog computing</h2>
+		<p>You’re probably well-acquainted with cloud computing. For sake of clarity, cloud computing typically refers to the centralization of computing resources (e.g., networks, servers, storage, applications) which are available over the internet, on-demand, and oftentimes “as a service.”</p>
+		<p>This concept has worked well so far, but there’s growing interest in “edge computing,” which pushes those centralized resources closer to the end user and away from the cloud. For example, instead of a self-driving car generating multiple gigabytes every second and shipping that information to the cloud to then get back a series of driving instructions, edge computing would embed a processor closer to the car (either on board the vehicle or in a nearby server) to conduct that analysis, thereby reducing reaction times when deciding to brake for a pedestrian or not. Much of this is being driven by the fact that processing power of IoT and edge devices continue to increase while prices decrease.</p>
+		<p>(For further reading, check <a href="http://a16z.com/2016/12/16/the-end-of-cloud-computing/">this presentation</a> from a16z’s Peter Levine and <a href="https://techcrunch.com/2016/08/02/how-fog-computing-pushes-iot-intelligence-to-the-edge/">this TechCrunch article</a>.)</p>
+		<p>What’s this mean for telco? Well, if more analysis and computing are to be conducted at the edge, it means (a) the aforementioned data boom won’t be traffic on your existing network but (b) if you want to capture that data, you better invest in low latency pathways and computing resources closer to end users. There’s no reason existing operators or cloud giants should necessarily own this space; if anything, investing in this new model could chip away at today’s bread and butter.</p>
+		<p>According to analysts, this isn’t something telcos are <a href="http://www.lightreading.com/mobile/mec-%28mobile-edge-computing%29/edge-computing-not-yet-a-telco-priority---poll/d/d-id/728995">thinking much about</a>. That may bite them later.</p>
+
+		<h2>What next?</h2>
+
+		<p>As you can see, a good bit going on, and about to go on, in telco today. Contrary to what many might believe, there are several potential openings for ambitious startups to rethink how we connect and consume. We often assume, maybe rightly so, that telco is fertile ground only for “natural monopoly,” but given the above, I’d argue that monopoly may begin to fray at the edges.</p>
+			
+		<p>I mentioned a few of the companies already looking to disrupt the traditional telco model; in a future post I’ll dig into one or two to think through how they might succeed.</p>
+
+	</main>
+
+		<footer>
+			<nav>
+				<a href="https://twitter.com/willsab" target="_blank">Twitter</a>
+				<a href="https://www.linkedin.com/in/willsab/" target="_blank">LinkedIn</a>
+				<a href="https://github.com/wsaborio" target="_blank">GitHub</a>
+			</nav>
+		</footer>
+
+</body>
+</html>

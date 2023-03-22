@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>willsab.com</title>
+  	<link rel="stylesheet" href="style.css">
+  	<script language="JavaScript">
+		var r_text = new Array (); 
+		r_text[0] = "You made it!"; 
+		r_text[1] = "Look who decided to show up!"; 
+		r_text[2] = "Looks like you're in the right place!";
+		r_text[3] = "Oh, wow, I wasn't expecting you!";
+		var i = Math.floor(r_text.length * Math.random()); 
+	</script>
+</head>
+<body>
+	<header>
+		<nav>
+			<a href="/">Home</a>
+			<a href="/about.html">About</a>
+			<a href="/blog">Blog</a>
+			<a href="/reading-list.html">Reading list</a>
+		</nav>
+	</header>
+
+	<main>
+		<h1>willsab.com</h1>
+		<p><script language="JavaScript">document.write(r_text[i]);</script></p>
+	</main>
+
+	<footer>
+		<nav>
+			<a href="https://twitter.com/willsab" target="_blank">Twitter</a>
+			<a href="https://www.linkedin.com/in/willsab/" target="_blank">LinkedIn</a>
+			<a href="https://github.com/wsaborio" target="_blank">GitHub</a>
+		</nav>
+	</footer>
+</body>
+</html>
