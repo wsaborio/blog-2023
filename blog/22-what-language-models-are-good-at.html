@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>22. What language models are good at | willsab.com</title>
+    <link rel="stylesheet" href="../style.css">
+	<link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-104042020-1"></script>
+	<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+
+	gtag('config', 'UA-104042020-1');
+	</script>
+</head>
+<body>
+	<header>
+		<nav>
+			<a href="/">Home</a>
+			<a href="/about.html">About</a>
+			<a href="/blog">Blog</a>
+			<a href="/reading-list.html">Reading list</a>
+		</nav>
+	</header>
+
+	<main>
+
+		<h1>22. What language models are good at</h1>
+		<p class="date" style="color: #999">2023-03-31</p>
+		<p>I get confused when people are severely disappointed ChatGPT doesn’t know something or hallucinates. I’m not sure why it’s important a large language model know that the Dodgers won the 1988 World Series, or what pi to the power of your birthday is, but I suspect part of the confusion stems from the whole “ChatGPT as Google search” killer discourse.</p>
+		<p>This strikes me as a misunderstanding of what language models are good and bad at. They are designed to predict the next token given a string of tokens. Language models look at a given text, assess the relationships of all tokens to one another, and arrive at a reasonable prediction of what text follows. (Hence the disparagement “stochastic parrot.”)</p>
+		<p>Language models are not trained or designed to do math or retrieve information from a URL or store memory, yet users often come with these expectations.</p>
+		<p>What makes language models still very important is that intelligence seems to resemble this pattern of predicting the next token. One might argue a human engaging in conversation, or creating an analogy, or writing a story, or programming an application are all just text completions with different expectations. Telling a joke is completing a text with a heavy emphasis on subverting the listener’s expectations with a surprise.</p>
+		<p>From what we can tell, weighing tokens and assessing a following token’s probability seems to be the basis of understanding. It forms the kernel of reason. [1]</p>
+		<p>In this respect, builders should recognize that an LLM alone is more like a content generator, synthesizer, text evaluator, and, if executed properly, a reasoning engine. It is not a fact base, or search engine, or calculator, or code interpreter — but can and should be and soon overwhelmingly will be equipped with those things. Users expect it.</p>
+		<p>[1] Sparks of Artificial General Intelligence: Early experiments with GPT-4.  <a href="https://arxiv.org/pdf/2303.12712.pdf">https://arxiv.org/pdf/2303.12712.pdf</a> </p>
+
+	</main>
+
+		<footer>
+			<nav>
+				<a href="https://twitter.com/willsab" target="_blank">Twitter</a>
+				<a href="https://www.linkedin.com/in/willsab/" target="_blank">LinkedIn</a>
+				<a href="https://github.com/wsaborio" target="_blank">GitHub</a>
+				<a href="mailto:w@willsab.com">Email</a>
+			</nav>
+		</footer>
+
+</body>
+</html>
