@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>23. How does the AI industry unfold? | willsab.com</title>
+    <link rel="stylesheet" href="../style.css">
+	<link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-104042020-1"></script>
+	<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+
+	gtag('config', 'UA-104042020-1');
+	</script>
+</head>
+<body>
+	<header>
+		<nav>
+			<a href="/">Home</a>
+			<a href="/about.html">About</a>
+			<a href="/blog">Blog</a>
+			<a href="/reading-list.html">Reading list</a>
+		</nav>
+	</header>
+
+	<main>
+
+		<h1>23. How does the AI industry unfold?</h1>
+		<p class="date" style="color: #999">2023-04-06</p>
+		<p>It seems AI is the hottest thing on the planet right now. Many people are breathlessly saying this is the most important moment in computing since [insert big thing here]. Personally, I’m very excited about it, but I also recognize that no one knows what they’re talking about. Analysts are reading tea leaves as the tea plant is sprouting.</p>
+		<p>With the caveat that I, too, lack a crystal ball, I want to think through what the dynamics of this market might look like in one, five, or ten years.</p>
+		<h3 id="The shape of things to come">The shape of things to come</h3>
+		<p>There are two AI businesses emerging: the consumer (b2c) business, and the developer and enterprise (b2b) business. The first develops and serves AI-enabled applications to an end-user, like OpenAI’s ChatGPT and Anthropic’s Claude. The second develops and serves models, tools, and APIs that enable AI-driven applications to a builder or purveyor of other software and services, much like OpenAI’s suite of APIs. The provider list runs longer here: OpenAI, Anthropic, Cohere, Google, StabilityAI, among others.</p>
+		<p>Historically, the gpt APIs have grown relatively fast; however, their growth is limited by 1) the number of developers using them, 2) the number of developers using them to create compelling end-user applications, and 3) the ability of those developers to distribute their compelling applications to end-users. However, in the last few months the consumer business has absolutely exploded: ChatGPT became the fastest-growing consumer application in history in the matter of weeks. [1] The bottlenecks in this consumer equation are only 1) awareness of ChatGPT, 2) an internet connection, and 3) end-user imagination.</p>
+		<p>Clearly the demand curves of these two markets is unique and, apart from development of underlying models, seemingly uncorrelated. Serving a Fortune 500 CIO or a tech company on the verge of IPO yields a very different product and company than does serving a college sophomore, a YC-backed founding team, or the owner of a nail salon.</p>
+		<h3 id="AI as cloud utility">AI as cloud utility</h3>
+		<p>It feels likely that AI for businesses and developers becomes a commodity. We already see open source (even machine local) alternatives to gpt models posting impressive performance statistics. OpenAI’s continual aggressive price cuts seem to be getting ahead of, even precipitating, this. [2]</p>
+		<p>A meaningful analogy for “intelligence as commodity” is the cloud market. Where most individual Azure, AWS, GCP, Oracle, etc. offerings are commoditized, the full suite of each start to look unique. Basic infrastructure like storage and compute, consumption pricing, and scalability are all table-stakes. Unique offerings like Google’s suite of ML services, integrations like Azure’s connections to the 365 Suite, compliance features like AWS GovCloud, discount structures, and developer experience impact customer decisions on the margin.</p>
+		<p>How might this map to AI offerings? From today’s offerings we can already start to see what features may shake out as future table-stakes:</p>
+		<li>API availability and uptime and reliability guarantees
+		</li><li>Thresholds of acceptable performance
+		</li><li>Reliable response times
+		</li><li>Competitive commercials (e.g., usage and volume discounts, commitment pricing)
+		</li><li>Basic developer experience (i.e., documentation, client libraries)
+		</li>
+		<p>Differentiation and “depth of suite” might happen on a few vectors:</p>
+		<li>Breadth of models for different use cases (e.g., speed / complexity tradeoffs) [3]
+		</li><li>Multimodal model offerings (e.g., text-to-text to text-to-image interoperability)
+		</li><li>Inter-model compatibility (e.g., embedding and completion interoperability)
+		</li><li>Depth of instruction fine-tuning (e.g., ease of use “out of the box”)
+		</li><li>Ease of integration with customer data sources (e.g., fine-tuning capabilities, vector store integrations)
+		</li><li>Enhanced developer experience (e.g., console experience, logging, model introspection) [4]
+		</li><li>Compliance and regulatory features (e.g., safety licenses, dataset bias checks)
+		</li><li>Dedicated capacity and model configuration [5]
+		</li>
+		<p>These considerations have significant impact on the products providers build, the suites they add up to, the distribution strategies they undertake, and the success they have. (I might do some more writing on this soon.)</p>
+		<h3 id="AI as consumer application">AI as consumer application</h3>
+		<p>The dynamics of commercializing AI for end-users are different. First, there are fewer entrants tackling consumer, with ChatGPT, Claude, and Bing as main players, and ChatGPT holding a majority of mindshare. While some small companies and developers offer chat interfaces on LLMs, they don’t have significant adoption, nor are they defensible.</p>
+		<p>The consumer market feels less concerned with price wars, broadening offerings, or exposing model complexity for power users. Instead, success here requires excellent user interactions, emphasizing valuable use cases, and, for the moment, consistently delivering delight, and eventually, consistently delivering.</p>
+		<p>Some key factors in this market:</p>
+		<li><b>UX is paramount:</b> Chat interfaces are the most natural means of interacting with LLMs today. [6] Simplifying and abstracting model complexity significantly improves the experience for lay users. Where much of ChatGPT’s functionality existed prior in the OpenAI Playground, the chat UI’s astronomic success can be attributed, in part, to removing the need to futz with parameters like temperature, top-p, and frequency penalties.
+		</li><li><b>Instruction fine-tuning:</b> User confidence and trust in the product depends on how quickly the application understands a task and can respond appropriately. Multiple shot interactions to achieve a single task dramatically reduces a user’s excitement. In the short-term, RLHF becomes a hot commodity for achieving better instruction performance.
+		</li><li><b>Information affordances:</b> Users often grow frustrated when chat interfaces hallucinate or fail to execute a task like simple addition. This feels like a misunderstanding of what LLMs do. [7] However, rather than trying to educate a user, offering the right nudges about how to interact with AI, or how to interpret responses, can go a long way.
+		</li><li><b>User understanding:</b> Today you and I use the same chat interface on top of the same model regardless of the task or time of day. Yet it is likely that my goals in writing a Flask application are different than yours in refining an update email. Understanding a user — their goals, tools, skills and capabilities, how they learn — can make interactions much more personalized and effective. (There’s an element of data network effects here at both the personal and market level.)
+		</li><li><b>Skills and integrations:</b> Where LLMs today are mainly knowledge resources, their reasoning abilities make them capable agents. Yet making AI offerings stickier for consumers will require deep integration into other parts of their lives. OpenAI’s plugins ecosystem is a step in this direction, but requires more investment and exploration to become truly valuable. [8] It remains to be seen if skills or plugins will be closed to specific providers.
+		</li><li><b>Surfaces:</b> Engaging with ChatGPT requires navigating a desktop or mobile browser to  <a href="http://chat.openai.com">chat.openai.com</a>. Claude lives in your Slack instance. Bing has you download and run Microsoft Edge. These surfaces feel early, but will evolve to make offerings more accessible, more quickly, without much thought. Expect competition over high-value surfaces where consumers live, reminiscent of Google’s annual $15B payout for remaining Safari’s default search. [9]
+		</li>
+		<h3 id="Questions">Questions</h3>
+		<p>The business and consumer markets stand mostly separate, apart from the fact they are built on the same foundational technology. There’s a long list of strategic questions a provider might have, but a few bubble up for me:</p>
+		<ol start="1"><li>Can a single provider successfully serve and capture the entire opportunity of both consumer and business markets at the same time? The distribution motions alone of these two businesses feel drastically different.
+		</li><li>Are there interactions between the b2b and b2c markets? For instance, does a developer’s experience of the Claude chatbot influence what API they choose to build a new feature?
+		</li><li>Which market grows faster? More durable?
+		</li></ol>
+		<p>[1]  <a href="https://www.reuters.com/technology/chatgpt-sets-record-fastest-growing-user-base-analyst-note-2023-02-01/">Reuters 2023.</a> </p>
+		<p>[2]  <a href="https://twitter.com/labenz/status/1631346679893958658">Nathan Labenz on Twitter.</a></p>
+		<p>[3] This being said, I’m not sure that large foundational model providers could, or should, offer “verticalized” models (i.e., trained on a specific domain). </p>
+		<p>[4] It has always bothered me that I cannot see usage logs and basic statistics in OpenAI’s console, so I was very happy to see Anthropic offers this with Claude API access.</p>
+		<p>[5] OpenAI is reportedly seizing this opportunity with their “Foundry” product: <a href="https://techcrunch.com/2023/02/21/openai-foundry-will-let-customers-buy-dedicated-capacity-to-run-its-ai-models">TechCrunch 2023.</a> </p>
+		<p>[6] <a href="https://www.willsab.com/blog/20-on-prompting.html">20. On prompting.</a> </p>
+		<p>[7] <a href="https://www.willsab.com/blog/22-what-language-models-are-good-at.html">22. What language models are good at.</a> </p>
+		<p>[8] I have been underwhelmed by the OpenAI plugins ecosystem at launch, but am confident the developer community will surface compelling offerings soon.</p>
+		<p>[9]  <a href="https://www.bloomberg.com/news/articles/2022-09-08/google-pays-enormous-sums-to-maintain-its-dominance-doj-says#xj4y7vzkg">Bloomberg 2022.</a> </p>
+
+	</main>
+
+		<footer>
+			<nav>
+				<a href="https://twitter.com/willsab" target="_blank">Twitter</a>
+				<a href="https://www.linkedin.com/in/willsab/" target="_blank">LinkedIn</a>
+				<a href="https://github.com/wsaborio" target="_blank">GitHub</a>
+				<a href="mailto:w@willsab.com">Email</a>
+			</nav>
+		</footer>
+
+</body>
+</html>
