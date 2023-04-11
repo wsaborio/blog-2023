@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>24. Estimating LLM demand in a YC batch | willsab.com</title>
+    <link rel="stylesheet" href="../style.css">
+	<link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-104042020-1"></script>
+	<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+
+	gtag('config', 'UA-104042020-1');
+	</script>
+</head>
+<body>
+	<header>
+		<nav>
+			<a href="/">Home</a>
+			<a href="/about.html">About</a>
+			<a href="/blog">Blog</a>
+			<a href="/reading-list.html">Reading list</a>
+		</nav>
+	</header>
+
+	<main>
+
+		<h1>24. Estimating LLM demand in a YC batch</h1>
+		<p class="date" style="color: #999">2023-04-11</p>
+		<p>Another YC batch has recently come and gone. Some have reported “about half” of the companies in the batch are commercializing AI in some way. [1]</p>
+		<p>This got me wondering: What might a given YC batch spend on LLMs?</p>
+		<p>Here’s a quick back-of-the-envelope calculation using very rough estimates and assuming relatively straightforward LLM usage:</p>
+		<blockquote>
+		<p>130 companies [half of the batch]</p>
+		<p>x $8 in LLM API usage costs per user per month [based on usage statistics in a product I built on gpt-4 and embeddings]</p>
+		<p>x 500 users per month [for a conservative average estimate across the batch]</p>
+		<p>x 12 months [to annualize the spend]</p>
+		</blockquote>
+		<p>This comes out to about $6 million in inference costs alone in the first year of the batch. This isn’t a lot, but the user base — fast-growing startups — makes it an interesting market.</p>
+		<p>On the one hand, many of these companies may wind down, transition usage to a cheaper option rather than an OpenAI or Anthropic model, potentially even build their own model, or pivot away from using AI-driven features altogether.</p>
+		<p>On the other hand, in the same way YC only needs one breakout company to return the batch, one or two users may grow LLM usage many orders of magnitude in the coming quarters and years.</p>
+		<p>YC companies like Stripe and Brex have nailed this YC playbook in the last few years. Going forward LLMs feel like an easy addition to that startup stack.</p>
+		<p>[1] <a href="https://twitter.com/gokulr/status/1620577528867074048">https://twitter.com/gokulr/status/1620577528867074048</a></p>
+
+	</main>
+
+		<footer>
+			<nav>
+				<a href="https://twitter.com/willsab" target="_blank">Twitter</a>
+				<a href="https://www.linkedin.com/in/willsab/" target="_blank">LinkedIn</a>
+				<a href="https://github.com/wsaborio" target="_blank">GitHub</a>
+				<a href="mailto:w@willsab.com">Email</a>
+			</nav>
+		</footer>
+
+</body>
+</html>
