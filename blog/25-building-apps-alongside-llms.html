@@ -29,10 +29,10 @@
 		<p class="date" style="color: #999">2023-04-12</p>
 
 		<p>A few weeks ago I redesigned my website entirely using ChatGPT. [1] In a similar vein, yesterday I built a simple and minimal first version of a language learning app for my wife alongside ChatGPT and Claude. The experience was fast — between 3 and 4 hours to go from idea to fully functioning minimal version into user hands — so I wanted to write it down for my or others’ future reference.</p>
-		<h2 id="Backstory">Backstory</h2>
+		<h3 id="Backstory">Backstory</h3>
 		<p>I grew up speaking and am fluent in Spanish, and I’d love to be able to speak it with my wife, whose native language is English. Like me, she doesn’t love classroom instruction and learns more quickly “on the job.” Products like Duolingo are nice, but aren’t integrated into her life. So, rather than learning vocabulary, conjugations, grammatical rules, or pronunciation, we’ll focus on learning practical phrases for daily use. We start by building muscle, not by perfecting form.</p>
 		<p>To focus on practicality, we’re carving out parts of our daily routine that we can discuss in Spanish with a set of stock phrases. I’ve been surprised at how quickly this starts to feel like second nature. [2]</p>
-		<h2 id="Goals">Goals</h2>
+		<h3 id="Goals">Goals</h3>
 		<p>It’s hard to keep track of the phrases we’ve discussed and are “using,” so I wanted her to have a place to reference what she’s learned. There are many “digital flash cards” available, but all feel incredibly heavy and onerous.</p>
 		<p>So, I wanted a simple app with the following:</p>
 		<li>A way to show the phrases she’s learned, with translations and general categories
@@ -40,7 +40,7 @@
 		</li><li>A way to hear what the phrase sounds like
 		</li>
 		<p>I didn’t want to make the application native to iOS (partly because I haven’t worked with the ecosystem), so I opted for technologies I know better: Next.js/React, Typescript, TailwindCSS, and Postgres on Supabase. [3]</p>
-		<h2 id="Process">Process</h2>
+		<h3 id="Process">Process</h3>
 		<p>With this high-level objective, I got to working with ChatGPT’s gpt-4 model. I fed it this beginning prompt [4]:</p>
 		<pre style="white-space: pre-wrap; word-wrap: break-word;"><code class='code-multiline'>You are a world class software engineer.
 
@@ -92,7 +92,7 @@ I will then reply with “build, and you will proceed to implement the exact spe
 		<p>One last interesting note on errors: ChatGPT could not find its way around a few roadblocks. For instance, when I tried asking it to style a homepage component a particular way, it gave me some relatively straightforward suggestions that would not work, and for the life of me, I could not understand why. When I fed the same question to Claude, it styled the component correctly in a single shot in an extremely obvious way. (Ah, what a great team.)</p>
 		<p><b>Deploying</b></p>
 		<p>With things squared away, I deployed the app to Vercel and my wife was successfully adding phrases a few minutes later.</p>
-		<h2 id="Takeaways">Takeaways</h2>
+		<h3 id="Takeaways">Takeaways</h3>
 		<p>Having used LLMs in coding, I was bullish on this new paradigm of software development. Yet, starting from scratch and building an entire MVP in a few hours was another exercise entirely that really opened my eyes to the future.</p>
 		<p>A few learnings on developing with LLMs stood out:</p>
 		<ol start="1"><li>Clear objectives and decisions matter. Delineating requirements and technologies makes a clear difference in project scaffolding quality and one’s ability to work with the output.
