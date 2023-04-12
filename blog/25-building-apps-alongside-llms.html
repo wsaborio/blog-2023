@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>25. Building apps alongside LLMs | willsab.com</title>
+    <link rel="stylesheet" href="../style.css">
+	<link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-104042020-1"></script>
+	<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+
+	gtag('config', 'UA-104042020-1');
+	</script>
+</head>
+<body>
+	<header>
+		<nav>
+			<a href="/">Home</a>
+			<a href="/about.html">About</a>
+			<a href="/blog">Blog</a>
+			<a href="/reading-list.html">Reading list</a>
+		</nav>
+	</header>
+
+	<main>
+
+		<h1>25. Building apps alongside LLMs</h1>
+		<p class="date" style="color: #999">2023-04-12</p>
+
+		<p>A few weeks ago I redesigned my website entirely using ChatGPT. [1] In a similar vein, yesterday I built a simple and minimal first version of a language learning app for my wife alongside ChatGPT and Claude. The experience was fast — between 3 and 4 hours to go from idea to fully functioning minimal version into user hands — so I wanted to write it down for my or others’ future reference.</p>
+		<h2 id="Backstory">Backstory</h2>
+		<p>I grew up speaking and am fluent in Spanish, and I’d love to be able to speak it with my wife, whose native language is English. Like me, she doesn’t love classroom instruction and learns more quickly “on the job.” Products like Duolingo are nice, but aren’t integrated into her life. So, rather than learning vocabulary, conjugations, grammatical rules, or pronunciation, we’ll focus on learning practical phrases for daily use. We start by building muscle, not by perfecting form.</p>
+		<p>To focus on practicality, we’re carving out parts of our daily routine that we can discuss in Spanish with a set of stock phrases. I’ve been surprised at how quickly this starts to feel like second nature. [2]</p>
+		<h2 id="Goals">Goals</h2>
+		<p>It’s hard to keep track of the phrases we’ve discussed and are “using,” so I wanted her to have a place to reference what she’s learned. There are many “digital flash cards” available, but all feel incredibly heavy and onerous.</p>
+		<p>So, I wanted a simple app with the following:</p>
+		<li>A way to show the phrases she’s learned, with translations and general categories
+		</li><li>A way to add phrases, and add notes to phrases, for helping remember details about use or context
+		</li><li>A way to hear what the phrase sounds like
+		</li>
+		<p>I didn’t want to make the application native to iOS (partly because I haven’t worked with the ecosystem), so I opted for technologies I know better: Next.js/React, Typescript, TailwindCSS, and Postgres on Supabase. [3]</p>
+		<h2 id="Process">Process</h2>
+		<p>With this high-level objective, I got to working with ChatGPT’s gpt-4 model. I fed it this beginning prompt [4]:</p>
+		<pre style="white-space: pre-wrap; word-wrap: break-word;"><code class='code-multiline'>You are a world class software engineer.
+
+Please draft a technical software spec for building the following: a Spanish-English phrasebook for my wife to help her learn Spanish. I need a simple and mobile-first Next.js app using Typescript, TailwindCSS for styling, and Supabase for a back-end.
+
+I want to keep things simple for this minimal first version. Here is what I am considering currently for product design elements:
+- All screens are mobile optimized for iPhone 13 Pro and iPhone 14 Pro.
+- The color theme is shades of green, with an emphasis on emerald.
+- The main typeface is Inter or, if that isn’t present, San Francisco.
+
+This is what I am thinking for the initial “home” UI:
+- When the app is opened, there is one main screen that shows rows of phrases in Spanish.
+- In each row, it shows the phrase and a “category” of the phrase.
+- Each phrase is separated from the next by a divider line.
+- There is a round “plus” button in the bottom right corner to add a new phrase.
+
+Upon tapping on a phrase in the above “home” UI, we then see a “phrase” UI:
+- Shows the phrase in Spanish in more pronounced typeface.
+- Shows the phrase in English.
+- Shows an area to add notes to the phrase.
+- Shows metadata of the phrase like data added, person who added, and category.
+- Shows a back button to return to the “home” UI.
+
+Think through how you would build it step by step.
+
+Then, respond with the complete spec as a well-organized markdown file.
+
+I will then reply with “build, and you will proceed to implement the exact spec, writing all of the code needed. I will periodically interject with “continue” to prompt you to keep going. Continue until complete.</code></pre>
+		<p>There’s a lot going on here which I don’t have time to explain today. My takeaway is that the more up-front design and technical decisions, the better the LLM is at scoping and delivering the project.</p>
+		<p>One note: I had tried this project a few weeks ago, but previously had not specified as much product detail or provided technology requirements, and the effort quickly fell apart due to ChatGPT opting to use a technical stack I wasn’t at all familiar with.## Building and deploying</p>
+		<p>ChatGPT started the task by delivering a spec of the project that clearly delineated the overview, design elements, and UI of the application. It also outlined six steps for building and deploying the application, with sections like “Step 1: Project Setup” and “Step 4: Add New Phrase Screen.”</p>
+		<p>Though I hadn’t asked for it, ChatGPT also suggested schemas for the required database tables, like so:</p>
+		<pre style="white-space: pre-wrap; word-wrap: break-word;"><code class='code-multiline'>phrases: stores the phrases and their translations.
+- id: UUID, primary key.
+- spanish: Text, not null.
+- english: Text, not null.
+- category: Text, not null.
+- created_by: Text, not null.
+- created_at: Timestamp with time zone, not null.</code></pre>
+		<p>I knew enough about building a React app on this stack to understand the general process by which to scaffold the app, but ChatGPT’s suggestions for `npx create-react app` were helpful anyway. Most helpful were the full-on file contents of something like `index.tsx` for the homepage and `[id].tsx` for an individual phrase’s page.</p>
+		<p>After getting a first version of the application running locally without any styling, I then asked it to style the application, starting with the homepage at <code class='code-inline'>index.tsx</code>. It then spit out the file’s contents with the correct Tailwind classNames added. [5]</p>
+		<p>The entire project took place in a single chat, apart from some additional chats I spun up on some relatively separate errors I encountered. For instance, when I needed help translating a wonky date format, I asked in a new gpt-3.5 window and got a quick answer. Retaining the conversation in a single place helped tremendously in maintaining the model’s context.</p>
+		<p><b>Changing scope</b></p>
+		<p>About 3 hours into the project, with a first version steadily humming, I thought it might be a good idea to offer the ability to pronounce a phrase in the app. I hadn’t done this before and I wasn’t sure of the lift, but I asked:</p>
+		<p>In the [id].tsx phrase detail page, I want to add a feature to pronounce the Spanish phrase. How can I go about adding that feature in the existing code?</p>
+		<p>ChatGPT quickly cranked out another iteration of <code class='code-inline'>[id].tsx</code> with a “Pronounce” button that worked on the first try. After a few more tweaks like changing the voice and its speed, the feature was up-and-running.</p>
+		<p><b>Handling errors</b></p>
+		<p>As expected, there were errors along the way. A simple copy-paste of the error into the chat would help unstick me, or if there was no error, a simple description of the challenge would help find a path forward. For instance, some global styles were blocking my Tailwind classNames, which ChatGPT quickly identified and helped me fix.</p>
+		<p>One last interesting note on errors: ChatGPT could not find its way around a few roadblocks. For instance, when I tried asking it to style a homepage component a particular way, it gave me some relatively straightforward suggestions that would not work, and for the life of me, I could not understand why. When I fed the same question to Claude, it styled the component correctly in a single shot in an extremely obvious way. (Ah, what a great team.)</p>
+		<p><b>Deploying</b></p>
+		<p>With things squared away, I deployed the app to Vercel and my wife was successfully adding phrases a few minutes later.</p>
+		<h2 id="Takeaways">Takeaways</h2>
+		<p>Having used LLMs in coding, I was bullish on this new paradigm of software development. Yet, starting from scratch and building an entire MVP in a few hours was another exercise entirely that really opened my eyes to the future.</p>
+		<p>A few learnings on developing with LLMs stood out:</p>
+		<ol start="1"><li>Clear objectives and decisions matter. Delineating requirements and technologies makes a clear difference in project scaffolding quality and one’s ability to work with the output.
+		</li><li>Different models take different approaches. Claude knew things ChatGPT didn’t, and vice-versa. There’s significant value in using both as a “team” to build and solve issues.
+		</li><li>If time-to-MVP is significantly less — specifically around building a software product and putting it into a user’s hands — the value of clear objectives, tasteful design decisions, and user understanding feels like it necessarily goes way up.
+		</li><li>When the cost of trying things is low enough, you try more things. To echo Simon Willison, working alongside LLMs increases my projects’ ambitions. [6]
+		</li></ol>
+		<p>[1]  <a href="https://www.willsab.com/blog/18-brought-to-you-by-ai.html">18. Brought to you by AI</a> </p>
+		<p>[2] This approach partly inspired by  <a href="https://www.youtube.com/watch?v=3i1lNJPY-4Q">The Fastest Way to Learn a New Language: The Video Game Map Theory</a> .</p>
+		<p>[3] I’m certain a native iOS experience is better, but my development speed trade-off was clearly in favor of a mobile web app.</p>
+		<p>[4] The idea for creating a spec first, followed by individual parts of the app, came partly from  <a href="https://twitter.com/mckaywrigley/status/1645816574933372928">this tweet by McKay</a> .</p>
+		<p>[5] I’d also occasionally prompt Github Copilot to tweak certain things in VSCode. My preferred approach here is adding a comment just before the line of code I’d like to adjust, deleting the next line, and reviewing Copilot’s suggestion.</p>
+		<p>[6]  <a href="https://simonwillison.net/2023/Mar/27/ai-enhanced-development/">AI-enhanced development makes me more ambitious with my projects</a> </p>
+
+	</main>
+
+		<footer>
+			<nav>
+				<a href="https://twitter.com/willsab" target="_blank">Twitter</a>
+				<a href="https://www.linkedin.com/in/willsab/" target="_blank">LinkedIn</a>
+				<a href="https://github.com/wsaborio" target="_blank">GitHub</a>
+				<a href="mailto:w@willsab.com">Email</a>
+			</nav>
+		</footer>
+
+</body>
+</html>
