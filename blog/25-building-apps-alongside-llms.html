@@ -70,7 +70,8 @@ Then, respond with the complete spec as a well-organized markdown file.
 
 I will then reply with “build, and you will proceed to implement the exact spec, writing all of the code needed. I will periodically interject with “continue” to prompt you to keep going. Continue until complete.</code></pre>
 		<p>There’s a lot going on here which I don’t have time to explain today. My takeaway is that the more up-front design and technical decisions, the better the LLM is at scoping and delivering the project.</p>
-		<p>One note: I had tried this project a few weeks ago, but previously had not specified as much product detail or provided technology requirements, and the effort quickly fell apart due to ChatGPT opting to use a technical stack I wasn’t at all familiar with.## Building and deploying</p>
+		<p>One note: I had tried this project a few weeks ago, but previously had not specified as much product detail or provided technology requirements, and the effort quickly fell apart due to ChatGPT opting to use a technical stack I wasn’t at all familiar with.
+		<h3 id="Building and deploying">Building and deploying</h3>
 		<p>ChatGPT started the task by delivering a spec of the project that clearly delineated the overview, design elements, and UI of the application. It also outlined six steps for building and deploying the application, with sections like “Step 1: Project Setup” and “Step 4: Add New Phrase Screen.”</p>
 		<p>Though I hadn’t asked for it, ChatGPT also suggested schemas for the required database tables, like so:</p>
 		<pre style="white-space: pre-wrap; word-wrap: break-word;"><code class='code-multiline'>phrases: stores the phrases and their translations.
@@ -80,12 +81,12 @@ I will then reply with “build, and you will proceed to implement the exact spe
 - category: Text, not null.
 - created_by: Text, not null.
 - created_at: Timestamp with time zone, not null.</code></pre>
-		<p>I knew enough about building a React app on this stack to understand the general process by which to scaffold the app, but ChatGPT’s suggestions for `npx create-react app` were helpful anyway. Most helpful were the full-on file contents of something like `index.tsx` for the homepage and `[id].tsx` for an individual phrase’s page.</p>
+		<p>I knew enough about building a React app on this stack to understand the general process by which to scaffold the app, but ChatGPT’s suggestions for <code class='code-inline'>npx create react app</code> were helpful anyway. Most helpful were the full-on file contents of something like <code class='code-inline'>index.tsx</code> for the homepage and <code class='code-inline'>[id].tsx</code> for an individual phrase’s page.</p>
 		<p>After getting a first version of the application running locally without any styling, I then asked it to style the application, starting with the homepage at <code class='code-inline'>index.tsx</code>. It then spit out the file’s contents with the correct Tailwind classNames added. [5]</p>
 		<p>The entire project took place in a single chat, apart from some additional chats I spun up on some relatively separate errors I encountered. For instance, when I needed help translating a wonky date format, I asked in a new gpt-3.5 window and got a quick answer. Retaining the conversation in a single place helped tremendously in maintaining the model’s context.</p>
 		<p><b>Changing scope</b></p>
 		<p>About 3 hours into the project, with a first version steadily humming, I thought it might be a good idea to offer the ability to pronounce a phrase in the app. I hadn’t done this before and I wasn’t sure of the lift, but I asked:</p>
-		<p>In the [id].tsx phrase detail page, I want to add a feature to pronounce the Spanish phrase. How can I go about adding that feature in the existing code?</p>
+		<code class='code-inline'>In the <code class='code-inline'>[id].tsx</code> phrase detail page, I want to add a feature to pronounce the Spanish phrase. How can I go about adding that feature in the existing code?</code>
 		<p>ChatGPT quickly cranked out another iteration of <code class='code-inline'>[id].tsx</code> with a “Pronounce” button that worked on the first try. After a few more tweaks like changing the voice and its speed, the feature was up-and-running.</p>
 		<p><b>Handling errors</b></p>
 		<p>As expected, there were errors along the way. A simple copy-paste of the error into the chat would help unstick me, or if there was no error, a simple description of the challenge would help find a path forward. For instance, some global styles were blocking my Tailwind classNames, which ChatGPT quickly identified and helped me fix.</p>
