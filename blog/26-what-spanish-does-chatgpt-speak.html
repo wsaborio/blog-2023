@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>26. What Spanish does ChatGPT speak? | willsab.com</title>
+    <link rel="stylesheet" href="../style.css">
+	<link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-104042020-1"></script>
+	<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+
+	gtag('config', 'UA-104042020-1');
+	</script>
+</head>
+<body>
+	<header>
+		<nav>
+			<a href="/">Home</a>
+			<a href="/about.html">About</a>
+			<a href="/blog">Blog</a>
+			<a href="/reading-list.html">Reading list</a>
+		</nav>
+	</header>
+
+	<main>
+
+		<h1>26. What Spanish does ChatGPT speak?</h1>
+		<p class="date" style="color: #999">2023-04-17</p>
+
+		<p>ChatGPT speaks excellent Spanish, but I was curious <i>what kind of</i> Spanish it knew best. Given Latin America has north of 20 Spanish-speaking countries, there’s significant variation in vocabulary and slang across borders. It’s not unlikely a Mexican might have a hard time understanding an Argentinian.</p>
+		<p>So I ran a little test to see where ChatGPT learned Spanish. The easiest way I thought of doing this was to probe at what it might call certain objects referenced differently across countries.</p>
+		<p>One example is the word for “straw”. I grew up referring to a “straw” as “pajilla”, but in other countries they’re known as “popote” (Mexico), “pitillo” (Colombia), and “bombilla” (Chile).</p>
+		<p>Another is “popcorn”, which I grew up knowing as, well, “popcorn”, but other countries refer to as “poporopo” (Guatemala), “crispetas” (Colombia), or “palomitas” (Mexico).</p>
+		<p>How would ChatGPT refer to a straw or popcorn?</p>
+		<p>Without any prompting, gpt3.5 says:</p>
+		<p><img src='../images/spanish gpt 1.png' width="100%" height="auto"></p>
+		<p><img src='../images/spanish gpt 2.png' width="100%" height="auto"></p>
+		<p>But what if I set some context to “localize” the model better? Here’s my attempt to “position” gpt in Mexico (with a bit of back and forth around :</p>
+		<p><img src='../images/spanish gpt 3.png' width="100%" height="auto"></p>
+		<p><img src='../images/spanish gpt 4.png' width="100%" height="auto"></p>
+		<p>What about setting a Colombian context by first asking for a recipe for a popular national dish, “bandeja paisa”?</p>
+		<p><img src='../images/spanish gpt 5.png' width="100%" height="auto"></p>
+		<p><img src='../images/spanish gpt 6.png' width="100%" height="auto"></p>
+		<p>Maybe the subtle task was too much for gpt3.5, so I turned a bit more direct to gpt4:</p>
+		<p><img src='../images/spanish gpt 7.png' width="100%" height="auto"></p>
+		<p>Still, not quite what I was looking for.</p>
+		<p>At least in these small, initial tests, I can’t seem to set a localized context for the model. I get the most popular global translation for a word. </p>
+		<p>This has interesting implications for products using LLMs to serve global audiences. There are local language nuances and contexts that are washed out in training.</p>
+		<p>Is that important? I suppose it depends on the ambition of the LLM-driven product. Replacing an entire human is likely difficult here, especially if a task requires communicating with local humans (e.g., “Why are you talking funny? Did you just refer to a straw as a ‘drinking tube’?”). If these products are only meant to assist, then there’s a higher burden placed on a user to interpret some of the language, but it’s not a deal-breaker.</p>
+		<p>I’m not sure there is necessarily a need for [language]-first LLMs, but the thought experiment might be interesting.</p>
+
+	</main>
+
+		<footer>
+			<nav>
+				<a href="https://twitter.com/willsab" target="_blank">Twitter</a>
+				<a href="https://www.linkedin.com/in/willsab/" target="_blank">LinkedIn</a>
+				<a href="https://github.com/wsaborio" target="_blank">GitHub</a>
+				<a href="mailto:w@willsab.com">Email</a>
+			</nav>
+		</footer>
+
+</body>
+</html>
