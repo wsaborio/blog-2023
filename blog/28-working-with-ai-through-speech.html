@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>28. Working with AI through speech | willsab.com</title>
+    <link rel="stylesheet" href="../style.css">
+	<link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-104042020-1"></script>
+	<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+
+	gtag('config', 'UA-104042020-1');
+	</script>
+</head>
+<body>
+	<header>
+		<nav>
+			<a href="/">Home</a>
+			<a href="/about.html">About</a>
+			<a href="/blog">Blog</a>
+			<a href="/reading-list.html">Reading list</a>
+		</nav>
+	</header>
+
+	<main>
+
+		<h1>28. Working with AI through speech</h1>
+		<p class="date" style="color: #999">2023-05-03</p>
+
+		<p>A few weeks ago I was curious to test what interacting with AI through speech might feel like. I’d been using ChatGPT, Claude, and other AI products for some time, but wondered if verbal dialogue might add anything to the interaction.</p>
+		<p>The tldr; is that there is something magical about using voice to command a machine and hear a human-like voice in response. However, the realities of working with a voice-first product today make the experience suboptimal for most use cases. To use a film reference, and having recently rewatched <i>Her</i>, I can’t say that we are close to communicating with Samantha, but the path there seems clearer than I thought. [1]</p>
+		<h3>Building an AI voice proof of concept</h3>
+		<p>I kept this proof of concept very light and wrote everything in Python. I created a script called <code class='code-inline'>local_chat.py</code> that, when run, initiates a dialogue with an assistant that speaks its responses. I called the assistant Graham. [2]</p>
+		<p>Graham works by:</p>
+		<li>Using the  <a href="https://pypi.org/project/SpeechRecognition/">SpeechRecognition</a>  library locally to listen to the computer’s audio inputs.
+		</li><li>Sending the resulting text to OpenAI’s <code class='code-inline'>gpt-3.5-turbo</code> model and parsing the response.
+		</li><li>Vocalizing the response with  <a href="http://elevenlabs.io">ElevenLabs</a>’ text-to-speech API.
+		</li>
+		<p>Each tool had alternatives, but I decided to optimize for response and speech latency. For that, SpeechRecognition won out against things like gTTS or Whisper. GPT-4 may have delivered better responses, but GPT-3.5’s much faster response time was a better trade-off. I used my Mac’s <code class='code-inline'>say</code> command for vocalizing responses, but the computer-garbled effect made the experience far less magical. In this case I traded speed for experience with ElevenLabs’ (still quick) API. [3]</p>
+		<p>I also explored what it might feel like to speak with this model over the phone. For this I wired the above script to a Twilio phone number. I’d call the number or initiate a call with the <code class='code-inline'>call.py</code> script and interact with the AI as above.</p>
+		<h3>The user experience</h3>
+		<p>It feels special engaging in a speech conversation with an AI that responds in a lifelike voice. Yet, the experience today feels both like the future and the clunky present. A few things make this hard to work with right now.</p>
+		<p>First and foremost is <b><u>latency</u></b>. While it’s very cool to speak to Graham, one quickly gets frustrated with the seconds that pass between request and response. It feels like an eternity, moreso than, say, waiting for a text response from GPT-4. Something about speech as an input method makes me impatient.</p>
+		<p>Beyond indexing on the fastest technologies I mentioned above, I tried optimizing latency in the interaction. For instance, I found batching functions felt very slow, so I run speech-to-text in chunks as soon as my voice starts and run text-to-speech in chunks as GPT-3.5’s response comes in. This helps somewhat, but not entirely.</p>
+		<p>Second, voice does not lend itself to <b><u>information density</u></b>. When using Graham, if I ask questions regarding knowledge, it reads a stream of dense paragraphs that are difficult to consume. [4] Asking, however, for help with booking a flight to New York triggered a more “transactional” dialogue that felt more natural over voice and phone [5].</p>
+		<p>Related to density, dialogue intended to understand or explore a topic is particularly ill-suited to voice. With audio, information is transmitted once; with text, the information is recorded and visually “callable” seconds, minutes, or hours later. Dense information can be revisited endlessly.</p>
+		<p>I mentioned I wired this up to Twilio to get a feel for interacting with AI over the phone. All the above considerations still play here, but I will say that a few additional edges take away from the magic even more. For instance, I found speech recognition fails much more frequently over phone, presumably due to <b><u>lossiness</u></b> over the phone channel. I also noticed additional latency.</p>
+		<p>In sum, voice is a very exciting potential future path for human-AI interaction, but it does not feel like the technical stack is there yet to facilitate a meaningfully magic experience for users. I'm excited to see it develop.</p>
+		<p>[1] I can’t say I love the movie as I found the plot and pacing quite slow. However, I do think that the movie does an extraordinary job of exploring how humans and superintelligent services might interact in the future. What makes this exploration even more deeply satisfying is that, yes, there is a lot of thought put into the AI technology, its design, and the human-AI interaction, but it also raises many interesting questions about how society, how relationships, and human thinking and emotion change as a result.</p>
+		<p>[2] “ <a href="https://www.americaslibrary.gov/jb/recon/jb_recon_telephone_1.html">Mr. Watson - come here - I want to see you.</a> “</p>
+		<p>[3] Another voice solution I played around with is  <a href="https://github.com/suno-ai/bark">Bark</a> , which uses a generative audio model to produce incredibly lifelike voices and speech patterns. However, because the Bark model actually generates sound files, this approach would have introduced significant latency to the proof-of-concept. As a proof point, using Colab’s GPUs took about 10 seconds to generate a short 25-word message with the Bark model.</p>
+		<p>[4]  <a href="https://news.mit.edu/2014/in-the-blink-of-an-eye-0116">Research from MIT</a>  suggests we process visual information faster than audio. This seems logical. The eye can consume a paragraph of text and is rate-limited mainly by the speed of light. The ear can hear a paragraph of text and is rate-limited by the transmitter’s speed of speech.</p>
+		<p>[5] I didn’t give the model any action-taking capabilities so this was purely a test.</p>
+
+	</main>
+
+		<footer>
+			<nav>
+				<a href="https://twitter.com/willsab" target="_blank">Twitter</a>
+				<a href="https://www.linkedin.com/in/willsab/" target="_blank">LinkedIn</a>
+				<a href="https://github.com/wsaborio" target="_blank">GitHub</a>
+				<a href="mailto:w@willsab.com">Email</a>
+			</nav>
+		</footer>
+
+</body>
+</html>
