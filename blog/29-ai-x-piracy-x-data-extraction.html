@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>29. AI x piracy x data extraction | willsab.com</title>
+    <link rel="stylesheet" href="../style.css">
+	<link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-104042020-1"></script>
+	<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+
+	gtag('config', 'UA-104042020-1');
+	</script>
+</head>
+<body>
+	<header>
+		<nav>
+			<a href="/">Home</a>
+			<a href="/about.html">About</a>
+			<a href="/blog">Blog</a>
+			<a href="/reading-list.html">Reading list</a>
+		</nav>
+	</header>
+
+	<main>
+
+		<h1>29. AI x piracy x data extraction</h1>
+		<p class="date" style="color: #999">2023-05-16</p>
+
+		<p>It was interesting to see Anthropic launch a new 100K token context window for Claude last week. There was a lot of excitement about it, and hand-wringing among folks deeply invested in the vector database and retrieval augmentation world. My guess is everyone will be fine.</p>
+		<p>I wasn’t, however, super clear on how I might use this new large context window. Earlier today I stumbled on a great use case, though, that seems to always drive innovation: piracy.</p>
+		<p>Really simply, I wanted to read an article that was paywalled. I could see in the page’s source that the article content was loaded, but I couldn’t find where the paywall element was to remove it. The article wasn’t that important, so I didn’t want to waste that many brain cycles on it, but I did wonder: Could Claude just… extract it for me?</p>
+		<p>So here’s what I did:</p>
+		<li>Opened a terminal and typed <code class='code-inline'>curl [url]</code>
+		</li><li>Copied the resulting output and pasted it into a Claude window
+		</li><li>Asked Claude to <code class='code-inline'>Please strip this html down to the main article text</code>
+		</li><li>After about a minute, the model printed the article contents
+		</li>
+		<p>Now, it’s not clear this is “worth” the cost of the tokens, and it definitely wouldn’t work on all paywalls out there. But, it was a very easy solution to a problem I had.</p>
+		<p>If you squint, there’s a broader use case for parsing scraped outputs and fundamentally rethinking data extraction pipelines.</p>
+
+	</main>
+
+		<footer>
+			<nav>
+				<a href="https://twitter.com/willsab" target="_blank">Twitter</a>
+				<a href="https://www.linkedin.com/in/willsab/" target="_blank">LinkedIn</a>
+				<a href="https://github.com/wsaborio" target="_blank">GitHub</a>
+				<a href="mailto:w@willsab.com">Email</a>
+			</nav>
+		</footer>
+
+</body>
+</html>
