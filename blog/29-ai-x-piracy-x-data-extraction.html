@@ -28,8 +28,7 @@
 		<h1>29. AI x piracy x data extraction</h1>
 		<p class="date" style="color: #999">2023-05-16</p>
 
-		<p>It was interesting to see Anthropic launch a new 100K token context window for Claude last week. There was a lot of excitement about it, and hand-wringing among folks deeply invested in the vector database and retrieval augmentation world. My guess is everyone will be fine.</p>
-		<p>I wasn’t, however, super clear on how I might use this new large context window. Earlier today I stumbled on a great use case, though, that seems to always drive innovation: piracy.</p>
+		<p>It was interesting to see Anthropic launch a new 100K token context window for Claude last week. I wasn’t, however, super clear on how I might use this new large context window. Earlier today I stumbled on a great use case, though, that seems to always drive innovation: piracy.</p>
 		<p>Really simply, I wanted to read an article that was paywalled. I could see in the page’s source that the article content was loaded, but I couldn’t find where the paywall element was to remove it. The article wasn’t that important, so I didn’t want to waste that many brain cycles on it, but I did wonder: Could Claude just… extract it for me?</p>
 		<p>So here’s what I did:</p>
 		<li>Opened a terminal and typed <code class='code-inline'>curl [url]</code>
