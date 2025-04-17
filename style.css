@@ -6,6 +6,22 @@ body {
 	font-family: 'Helvetica', sans-serif;
 }
 
+@media (max-width: 768px) {
+	body {
+		width: 90%;
+	}
+}
+
+@media (max-width: 480px) {
+	body {
+		width: 95%;
+	}
+	
+	header a, footer a {
+		margin-right: 0.5rem;
+	}
+}
+
 header, footer {
 	color: #000;
 	padding: 1rem;
