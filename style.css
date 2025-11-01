@@ -3,7 +3,6 @@ body {
 	padding: 0;
 	width: 60%;
 	margin: 0 auto;
-	font-family: 'Helvetica', sans-serif;
 }
 
 @media (max-width: 768px) {
@@ -11,6 +10,12 @@ body {
 		width: 90%;
 	}
 }
+
+/* Use Inter font globally */
+:root {
+  font-family: 'Inter', 'Helvetica', sans-serif;
+}
+
 
 @media (max-width: 480px) {
 	body {
